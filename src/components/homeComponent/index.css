@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* ---------------- Navbar and burger menu ------------------ */
+nav {
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: flex-start;
+    padding: 1em;
+}
+
+.burger-menu {
+    height: 60%;
+    width: 4em;
+    display: flex;
+    font-size: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+    margin-left: 20px ;
+    margin-top: -20px;
+}
+
+.burger-bar {
+    width: 4em;
+    height: 0.5em;
+    background-color: rgb(244, 239, 239);
+    border-radius: 0.5em;
+    z-index: 20;
+}
+
+.menu {
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    list-style: none;
+    display: flex;
+    width: 250px;
+    padding-top: 3.5rem;
+    align-items: center;
+}
+
+/* ------------- sliding menu ------------------ */
+.hidden {
+    display: none;
+
+}
+
+.visible {
+    display: inherit;
+}
+
+/* ----- animations--------- */
+/* clicked */
+.burger-bar.clicked:nth-child(1){
+    transform: rotate(44deg) translate(0.75em, 1.25em);
+    transition: ease-out 0.5s;
+    background-color: black;
+}
+
+.burger-bar.clicked:nth-child(2){
+    transform: scale(0.1);
+    transition: ease-out 0.5s;
+}
+
+.burger-bar.clicked:nth-child(3){
+    transform: rotate(135deg) translate(-0.5em, 1em);
+    transition: ease-out 0.5s;
+    background-color: black;
+
+}
+
+/* unclicked */
+.burger-bar.unclicked {
+    transform: rotate(0) translate(0);
+    transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
